@@ -11,5 +11,5 @@ resource "aws_instance" "terraform" {
 
 resource "aws_ec2_instance_state" "terraform" {
   instance_id = aws_instance.terraform.id
-  state       = "stopped"
-} 
+  state       = "running"
+}
