@@ -1,11 +1,7 @@
-resource "aws_vpc" "main" {
-  cidr_block = "10.0.0.0/16"
-}
-
 resource "aws_security_group" "web-sg" {
   name        = "web-sg"
   description = "web-sg"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = data.aws_vpc.default.id
 
 
   ingress {
@@ -37,7 +33,7 @@ resource "aws_security_group" "web-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["1.39.242.5/32"]
+    cidr_blocks = ["110.226.161.127/32"]
   }
 
   egress {

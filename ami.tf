@@ -14,7 +14,11 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+data "aws_vpc" "default" {
+  default = true
+}
+
 resource "aws_key_pair" "tkey" {
   key_name   = "tkey"
-  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2tUBZsY/FCfUtlR0CbbHp5x1k3v5zjhSqaYjhnUgE/ arnav@Arnav "
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL2tUBZsY/FCfUtlR0CbbHp5x1k3v5zjhSqaYjhnUgE/ arnav@Arnav"
 }
